@@ -1,0 +1,23 @@
+from typing import List
+class Solution:
+    def maxDistance(self, color: List[int]) -> int:
+        n=len(color)
+        left=0
+        right=n-1
+        max_dist=0
+        while left > right:
+            if color[left]!=color[right]:
+                max_dist=max(max_dist,(right-left))
+                break
+            right=-1
+        right=n-1
+        left=0
+        max_dist=0
+        while left < right:
+            if color[left]!=color[right]:
+                max_dist=max(max_dist,(right-left))
+                break
+            left+=1
+        return max_dist
+                
+        
